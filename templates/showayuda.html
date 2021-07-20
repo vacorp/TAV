@@ -1,0 +1,140 @@
+{% load static from staticfiles %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto a Voz</title>    
+    <link rel="stylesheet" href="/css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<style>
+    * {
+	padding: 0;
+	margin:0
+	
+}
+body{
+	background: #E9ECF4;
+	color: #000;
+	font-family: 'Roboto, sans-serif';
+}
+.contenedor {
+	width: 90%;
+	max-width:1000px;
+	margin:20px auto; 
+    display:grid;
+	grid-gap:20px; 
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4,auto);
+    grid-template-areas:     "header            header              header"
+                             "contenido         contenido           contenido"
+			     	         "regresar          regresar            regresar"
+                             "footer            footer              footer";
+
+}
+
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .footer
+.contenedor .contenido,
+.contenedor .regresar,
+.contenedor .introduccion
+{
+	background: #fff;
+	padding:20px;
+
+}   
+.contenedor .header{
+	background: #12203E;
+	color: #fff;display:flex;
+	align-items:center; /* alineacion vertical; tambien se puede usar auto, start, stretch,end */
+	justify-content: center; /* alineacion horizontalmente */
+	grid-area: header;
+
+}
+
+.contenedor .contenido{
+	grid-area: contenido;
+}
+
+
+.contenedor .regresar  {
+	background: #12203E;
+	color: #fff;
+	grid-area: regresar;
+    text-align: left;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+
+
+.contenedor .footer{
+	background: #12203E;
+	color: #fff;
+	grid-area: footer;
+    text-align: center;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+} 
+
+@media screen and (max-width:768px){
+	.contenedor{
+		grid-template-areas: "header            header              header"
+                             "contenido         contenido           contenido"
+			     	         "regresar          regresar            regresar"
+                             "footer            footer              footer";
+	}
+}
+
+</style>          
+</head>
+<body   >
+    <div class="contenedor">
+
+        <header class="header">
+            <h1>Texto a Voz - TaV</h1>
+        </header>
+    
+        <main class="contenido">           
+                <h2 >Introducción </h2>                
+                   
+                    <p >Texto a Voz - TaV se hizo con el objetivo de ayudar a las personas totalmente ciegas o cuya visión es muy escasa o limitada. </p>
+                    
+                    <p>También TaV sirve en ciertas ocasiones cuando estamos conduciendo un vehículo lo cual nos dificulta realizar la lectura que nos gustaría, pero que podemos escuchar sin problema alguno. </p>                
+                   
+                    <p >Otras veces, TaV nos ayudaría cuando hay cansancio o ardor en la vista pero que sin embargo podemos escuchar al estilo audio libro o de un artículo interesante del cual deseamos tener el conocimiento respectivo. </p>
+                    
+                    <p >También TaV puede usarse cuando se nos dificulta la lectura porque las letras son muy pequeñas y no podemos verlas adecuadamente, pero que si podemos escuchar el contenido correspondiente.</p>   
+                    
+                    <p >También TaV puede usarse para aquellas personas que desean escuchar el correcto pronunciamiento de las palabras del idioma en la cual está escrito.</p>
+  
+                 <h2>Funcionamiento</h2>          
+                    
+                    <p>Texto a Voz (TaV),  toma una archivo cuya extensión sea txt, pdf o docx y produce la voz correspondiente de dicho archivo. </p> 
+                    <p></p>
+                    <p>En esta primera versión, TaV trabaja con archivos en español, Inglés o Fines (lenguaje hablado en Finlandia, por mi hija quien vive allá). Si algún usuario requiere otro idioma, por favor, notifíquelo a douglaslopez2311@gmail.com y con gusto lo añadiremos.</p>
+                    <p>TaV produce un archivo (en descarga) con nombre igual al archivo (filename) en formato “MP3” que el usuario podrá acceder posteriormente.  </p>  
+                    <p>TaV tardará varios minutos en producir el archivo de voz dependiendo del tamaño del archivo a convertir: mientras mas grande sea el archivo, mas durará el proceso de conversión.</p>  
+                    <p>Si requiere la traducción del archivo original, marque el campo "traducción" y seleccione el lenguaje deseado</p>
+
+        </main>
+
+        <regresar class="regresar">
+            <p >TaV es totalmente gratuito. Tenemos planificado producir otras versiones con otras opciones tal como voz a texto y traducción de un lenguaje a otro.
+                Esperamos que Tav les sea de utilidad y les ayude en sus tareas de lectura ordinaria. 
+            </p>
+            
+            <a href ="/choosefile">
+                <span style="background-color: #12203E; color:white">Regresar</span>
+            </a>       
+        </regresar>   
+
+        <footer class="footer">
+            <h3>Value Added Corporation - VACORP, C.A. - Copyright 2021</h3>
+        </footer>
+    </contenedor>    
+</body>
+</html>

@@ -1,0 +1,82 @@
+* {
+	padding: 0;
+	margin:0
+	
+}
+body{
+    margin-top: 150px;
+	background: #E9ECF4;
+	color: #000;
+	font-family: 'Roboto, sans-serif';
+}
+.contenedor {
+	width: 90%;
+	max-width:1000px;
+	margin:5px auto; 
+    display:grid;
+	grid-gap:20px; 
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6,auto);
+	grid-template-areas:    "header     header      header"
+                            "archivo    archivo     ayuda"
+			                "footer     footer      footer";
+                            
+}
+
+.contenedor .header,
+.contenedor .ayuda,
+.contenedor .archivo,
+.contenedor .logo,
+.contenedor .footer
+{
+	background: #fff;
+	padding:10px;
+
+}   
+.contenedor .header{
+	background: #12203E;
+	color: #fff;display:flex;
+	align-items:center; /* alineacion vertical; tambien se puede usar auto, start, stretch,end */
+	justify-content: center; /* alineacion horizontalmente */
+	grid-area: header;
+
+}
+
+.contenedor .archivo{    
+    text-align: center;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	grid-area: archivo;
+
+}
+
+.contenedor .ayuda
+{   
+    text-align: center;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+    grid-area: ayuda;
+
+}
+
+.contenedor .footer{
+	background: #12203E;
+	color: #fff;
+	grid-area: footer;
+    text-align: center;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+} 
+
+
+@media screen and (max-width:768px){
+	.contenedor{
+        grid-template-areas:
+                            "header     header      header"
+                            "archivo    archivo     ayuda"
+			                "footer     footer      footer";
+	}
+}

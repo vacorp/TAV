@@ -1,0 +1,77 @@
+{% load static from staticfiles %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto a Voz</title>
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+    <div class="contenedor">
+
+		<header class="header">
+			<h1>Texto a Voz - TaV</h1>
+		</header>
+        <!--
+        <logo class="logo">
+            <img class="img" src="{% static 'images/text2voice.png' %} "  />
+        </logo>
+        -->
+
+
+
+        <archivo class="archivo">
+                <form action="/showresults/" method="POST" enctype="multipart/form-data" name="form1" >            
+                    {% csrf_token %}
+                    <!-- 
+                    Seleccione:  
+                    <input type="radio" id="tipo" name="tipo" value="textoavoz"  checked="checked">
+                    <label for="textoavoz">Texto a voz <b>(solo extensiones:  .txt, .pdf o .docx)</b></label>                    
+                    <input type="radio" id="tipo" name="tipo" value="vozatexto">
+                    <label for="vozatexto">Voz a texto <b>(solo MP3)</b></label><br>
+                    -->        
+                    <h4>Archivo (.txt, .pdf o .docx): <input type="file" name="filename" id="filename" required>                        
+                        Languaje:
+                        <select name="language" id="languaje">
+                            <option value="es" selected >Español</option>
+                            <option value="en">Inglés</option>
+                            <option value="fi">Fines</option>                        
+                        </select>  
+                    </h4>
+                    <br>
+                    <input type="checkbox" id="traduccion" name="traduccion" value="traduccion">
+                        <label for="traduccion">¿Deseas traducción?</label>
+                        Languaje destino: 
+                            <select name="lenguajedestino" id="lenguajedestino">
+                                <option value="es" selected >Español</option>
+                                <option value="en">Inglés</option>
+                                <option value="fi">Fines</option>                        
+                            </select>                        
+
+                    (la conversión tarda varios minutos)
+                    <br>
+                    <br>
+                    <h4><input type="submit" value="Aceptar" name="submit"></h4>  
+                </form>   
+        </archivo>       
+        <ayuda class="ayuda">
+            <form action="/showayuda/" method="GET" name="form2" >            
+                {% csrf_token %}
+                <div>                    
+                        <input type="image" src="{% static 'images/ayuda.png' %}">
+                    </img>   
+                </div> 
+            </form>
+        </ayuda>
+                  
+
+        <footer class="footer">
+            <h3>Value Added Corporation - VACORP, C.A. - Copyright 2021</h3>
+        </footer>
+    </div>
+</body>
+</html>
